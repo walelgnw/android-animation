@@ -1,18 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/move"
+        android:layout_height="match_parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/center"
+            android:text="InFromTop"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_below="@id/center"
+            android:id="@+id/bottom"
+            android:text="InFromBottom"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/center"
+            android:id="@+id/right"
+            android:text="InFromRight"
+            android:layout_margin="15dp"
+            android:rotation="90"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/left"
+            android:layout_toStartOf="@id/center"
+            android:layout_margin="15dp"
+            android:text="InFromLeft"
+            android:rotation="270"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"/>
+        <ProgressBar
+            android:id="@+id/center"
+            android:layout_width="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_height="60dp"/>
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="40dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_baseline_stars_24"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_height="40dp"/>
 
-    <TextView
+    </RelativeLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fade_in"
+            android:layout_margin="15dp"
+            android:text="Fade In"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fade_out"
+            android:layout_margin="15dp"
+            android:text="Fade Out"
+            android:layout_height="wrap_content"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</RelativeLayout>

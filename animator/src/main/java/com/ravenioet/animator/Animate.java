@@ -58,25 +58,25 @@ public class Animate extends DialogFragment {
         return outtoRight;
     }
     //vertical
+    static public Animation inFromTopAnimation(int duration) {
+        Animation inFromTop = new TranslateAnimation(
+                Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, -1.0f,
+                Animation.RELATIVE_TO_PARENT, 0.0f);
+        inFromTop.setDuration(duration);
+        inFromTop.setInterpolator(new AccelerateInterpolator());
+        return inFromTop;
+    }
     static public Animation outToTopAnimation(int duration) {
         Animation outToTop = new TranslateAnimation(
                 Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, +1.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.0f);
+                Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, -1.0f);
         outToTop.setDuration(duration);
         outToTop.setInterpolator(new AccelerateInterpolator());
         return outToTop;
-    }
-    static public Animation outToBottomAnimation(int duration) {
-        Animation outToBottom = new TranslateAnimation(
-                Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, +1.0f,
-                Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.0f);
-        outToBottom.setDuration(duration);
-        outToBottom.setInterpolator(new AccelerateInterpolator());
-        return outToBottom;
     }
     static public Animation inFromBottomAnimation(int duration) {
         Animation inFromBottom = new TranslateAnimation(
@@ -88,15 +88,15 @@ public class Animate extends DialogFragment {
         inFromBottom.setInterpolator(new AccelerateInterpolator());
         return inFromBottom;
     }
-    static public Animation inFromTopAnimation(int duration) {
-        Animation inFromTop = new TranslateAnimation(
+    static public Animation outToBottomAnimation(int duration) {
+        Animation outToBottom = new TranslateAnimation(
                 Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, +1.0f,
                 Animation.RELATIVE_TO_PARENT, 0.0f,
-                Animation.RELATIVE_TO_PARENT, 0.0f);
-        inFromTop.setDuration(duration);
-        inFromTop.setInterpolator(new AccelerateInterpolator());
-        return inFromTop;
+                Animation.RELATIVE_TO_PARENT, 0.0f,
+                Animation.RELATIVE_TO_PARENT, +1.0f);
+        outToBottom.setDuration(duration);
+        outToBottom.setInterpolator(new AccelerateInterpolator());
+        return outToBottom;
     }
 
     static public Animation fadeIn(int duration) {
